@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Read and clean data
-df = pd.read_csv("Customer-Churn-Prediction-Model/Telecomdata.csv", dtype={"Churn": "Int64"})
+df = pd.read_csv("C:/Users/MY BOOK/Downloads/churn-prediction-project/Telecomdata.csv", dtype={"Churn": "Int64"})
 df = df.dropna(subset=['Churn'])  # Remove rows with missing target values
 
 # Reduce dataset size for faster testing (optional for debugging)
@@ -38,6 +38,17 @@ log.fit(X_train, y_train)
 predict_log = log.predict(X_test)
 log_accuracy = accuracy_score(y_test, predict_log)
 print(f"Logistic Regression Accuracy: {log_accuracy:.2f}")
+
+from sklearn.metrics import precision_score, recall_score, f1_score
+
+log_precision = precision_score(y_test, predict_log)
+log_recall = recall_score(y_test, predict_log)
+log_f1 = f1_score(y_test, predict_log)
+
+print(f"Logistic Regression Precision: {log_precision:.2f}")
+print(f"Logistic Regression Recall: {log_recall:.2f}")
+print(f"Logistic Regression F1 Score: {log_f1:.2f}")
+
 
 # Logistic Regression Confusion Matrix
 cm_log = confusion_matrix(y_test, predict_log)
@@ -74,6 +85,14 @@ forest_model.fit(X_train, y_train)
 forest_pred = forest_model.predict(X_test)
 forest_accuracy = accuracy_score(y_test, forest_pred)
 print(f"Random Forest Accuracy: {forest_accuracy:.2f}")
+
+forest_precision = precision_score(y_test, forest_pred)
+forest_recall = recall_score(y_test, forest_pred)
+forest_f1 = f1_score(y_test, forest_pred)
+
+print(f"Random Forest Precision: {forest_precision:.2f}")
+print(f"Random Forest Recall: {forest_recall:.2f}")
+print(f"Random Forest F1 Score: {forest_f1:.2f}")
 
 # Random Forest Confusion Matrix
 cm_forest = confusion_matrix(y_test, forest_pred)

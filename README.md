@@ -27,6 +27,39 @@ This project focuses on predicting customer churn in a telecom company using mac
 - 📊 Output CSV from model integrated into dashboard
 
 ---
+# 📊 Customer Churn Prediction and Data Visualization
+
+This project predicts customer churn in the telecom sector using machine learning models — Logistic Regression and Random Forest — and visualizes the results using Seaborn and Plotly. The aim is to identify at-risk customers to help businesses reduce churn rates.
+
+---
+
+## 📁 Dataset
+
+The dataset used is `Telecomdata.csv`, which contains customer demographics, service details, and churn status.
+
+Key attributes include:
+- Tenure
+- Monthly & Total Charges
+- Contract Type
+- Tech Support Availability
+- Internet Service Type
+- Churn Indicator (Target)
+
+---
+
+## 🧹 Data Preprocessing
+
+- Removed rows with missing `Churn` values.
+- Dropped irrelevant columns: `CustomerID`, `Signup_Date`, `Churn_Date`, `PaymentMethod`, `StreamingTV`, `SeniorCitizen`.
+- Encoded categorical variables: `Contract`, `TechSupport`, `InternetService`.
+
+---
+
+## 🔢 Sample Input for Prediction
+
+```python
+sample = pd.DataFrame([[24, 800, 32000, 2, 1, 1]], columns=X.columns)
+
 
 ## 🧪 How It Works
 

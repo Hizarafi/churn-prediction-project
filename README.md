@@ -27,11 +27,6 @@ This project focuses on predicting customer churn in a telecom company using mac
 - 📊 Output CSV from model integrated into dashboard
 
 ---
-# 📊 Customer Churn Prediction and Data Visualization
-
-This project predicts customer churn in the telecom sector using machine learning models — Logistic Regression and Random Forest — and visualizes the results using Seaborn and Plotly. The aim is to identify at-risk customers to help businesses reduce churn rates.
-
----
 
 ## 📁 Dataset
 
